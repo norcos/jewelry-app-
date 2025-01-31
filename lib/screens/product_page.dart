@@ -1,8 +1,7 @@
-// ignore_for_file: prefer_const_constructors
+
 
 import 'package:flutter/material.dart';
-import 'home_screen.dart'; // Import the HomeScreen
-import 'login_screen.dart';
+
 
 
 class ProductPage extends StatelessWidget {
@@ -29,7 +28,7 @@ class ProductPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Product Image
+         
               Image.asset(
                 productImagePath,
                 width: double.infinity,
@@ -37,7 +36,7 @@ class ProductPage extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
               const SizedBox(height: 20),
-              // Product Name and Price
+            
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -59,7 +58,7 @@ class ProductPage extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 10),
-              // Rating
+            
               Row(
                 children: [
                   const Icon(
@@ -95,7 +94,7 @@ class ProductPage extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               SingleChildScrollView(
-                // Add horizontal scrolling for smaller screens
+              
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
@@ -109,7 +108,7 @@ class ProductPage extends StatelessWidget {
               ),
 
               const SizedBox(height: 20),
-              // Metal and Width
+             
               const Text(
                 "Metal: Gold",
                 style: TextStyle(
@@ -172,50 +171,19 @@ class ProductPage extends StatelessWidget {
           ),
         ),
       ),
-      // Bottom Navigation Bar
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
-            label: 'Wishlist',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.chat),
-            label: 'Chat',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Settings',
-          ),
-        ],
-        currentIndex: 0, // Set the current index
-        selectedItemColor: const Color.fromARGB(255, 98, 95, 95),
-        onTap: (index) {
-          // Handle navigation
-          if (index == 0) {
-            // Navigate to HomeScreen when the home icon is clicked
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                builder: (context) => HomeScreen(),
-              ),
-            );
-          }
-        },
+    );
+  }
+
+  void _addToWishlist(BuildContext context, String productName, String productImagePath, String productPrice) {
+   
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text('$productName has been added to your wishlist!'),
       ),
     );
   }
 
-  // Helper method to build caret options
+
   Widget _buildCaretOption(String caret, String text, Color color) {
     return Container(
       margin: const EdgeInsets.only(right: 10),
@@ -227,7 +195,7 @@ class ProductPage extends StatelessWidget {
       child: Text(
         text,
         style: TextStyle(
-          color: Colors.black, // Set color here
+          color: Colors.black, 
           fontSize: 16,
           fontWeight: FontWeight.bold,
         ),
@@ -235,7 +203,7 @@ class ProductPage extends StatelessWidget {
     );
   }
 
-  // Helper method to build width options
+
   Widget _buildWidthOption(String width, String text, Color color) {
     return Container(
       margin: const EdgeInsets.only(right: 10),
@@ -247,8 +215,7 @@ class ProductPage extends StatelessWidget {
       child: Text(
         text,
         style: TextStyle(
-          color: Colors.black, // Set color here
-          fontSize: 16,
+          color: Colors.black, 
           fontWeight: FontWeight.bold,
         ),
       ),
@@ -256,114 +223,5 @@ class ProductPage extends StatelessWidget {
   }
 }
 
-
-
-class ChatScreen extends StatelessWidget {
-  const ChatScreen({super.key});
-
- @override
-  Widget build(BuildContext context) {
-
-    return Center(
-      child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text(
-                  'Log in to chat with us.',
-                  style: TextStyle(fontSize: 18),
-                ),
-                const SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: () {
-                    // Navigate to login screen
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) =>  LoginScreen(),
-                      ),
-                    );
-                  },
-                  child: const Text('Log in'),
-                  style: ElevatedButton.styleFrom(
-                  
-                  ),
-                ),
-              ],
-            ),
-    );
-  }
-}
-
-
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-
-    return Center(
-      child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text(
-                  'Log in to check your profile.',
-                  style: TextStyle(fontSize: 18),
-                ),
-                const SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: () {
-                    // Navigate to login screen
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) =>  LoginScreen(),
-                      ),
-                    );
-                  },
-                  child: const Text('Log in'),
-                  style: ElevatedButton.styleFrom(
-                  
-                  ),
-                ),
-              ],
-            ),
-    );
-  }
-}
-
-
-// Function to simulate adding the product to the wishlist
-  void _addToWishlist(BuildContext context, String productName, String productImagePath, String productPrice) {
-    // Get the current wishlist from a global list or state management
-    // For now, I will store the wishlist in a static list for demonstration
-
-    List<Map<String, String>> wishlist = []; // Simulate an empty wishlist
-
-    // Add the product to the wishlist list
-    wishlist.add({
-      'name': productName,
-      'image': productImagePath,
-      'price': productPrice,
-    });
-
-    // Show a confirmation dialog
-    showDialog(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          title: const Text('Success'),
-          content: const Text('Product added to your wishlist!'),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop(); // Close the dialog
-              },
-              child: const Text('OK'),
-            ),
-          ],
-        );
-      },
-    );
-  }
 
 

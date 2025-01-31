@@ -8,7 +8,6 @@ class WishlistScreen extends StatefulWidget {
 }
 
 class _WishlistScreenState extends State<WishlistScreen> {
-  // Sample wishlist products (for demo purposes)
   List<Map<String, String>> wishlistItems = [
     {
       'name': 'Gold Ring',
@@ -42,10 +41,9 @@ class _WishlistScreenState extends State<WishlistScreen> {
     },
   ];
 
-  // Function to remove a product from the wishlist
   void _removeFromWishlist(int index) {
     setState(() {
-      wishlistItems.removeAt(index); // Remove item at the selected index
+      wishlistItems.removeAt(index);
     });
   }
 
@@ -63,7 +61,6 @@ class _WishlistScreenState extends State<WishlistScreen> {
                   margin: const EdgeInsets.all(10),
                   child: Row(
                     children: [
-                      // Product Image
                       Image.asset(
                         wishlistItems[index]['image']!,
                         width: 100,
@@ -71,7 +68,6 @@ class _WishlistScreenState extends State<WishlistScreen> {
                         fit: BoxFit.cover,
                       ),
                       const SizedBox(width: 10),
-                      // Product Name and Price
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -92,11 +88,9 @@ class _WishlistScreenState extends State<WishlistScreen> {
                         ],
                       ),
                       const Spacer(),
-                      // Delete Button
                       IconButton(
                         icon: const Icon(Icons.delete),
                         onPressed: () {
-                          // Call function to remove item from wishlist
                           _removeFromWishlist(index);
                         },
                       ),

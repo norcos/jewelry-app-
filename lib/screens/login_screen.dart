@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'home_screen.dart'; // Import home screen
-import 'registration_screen.dart'; // Import registration screen
+import 'home_screen.dart'; 
+import 'registration_screen.dart'; 
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
 
-  // Hardcoded credentials
-  final String _correctEmail = 'user@example.com';
-  final String _correctPassword = 'password123';
+
+  final String _correctEmail = 'admin@gmail.com';
+  final String _correctPassword = 'admin123';
 
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -19,15 +19,15 @@ class LoginScreen extends StatelessWidget {
         children: [
           // Background Image
           Image.asset(
-            'assets/images/login_back.png', // Replace with your background image
+            'assets/images/login_back.png',
             width: double.infinity,
             height: double.infinity,
             fit: BoxFit.cover,
           ),
-          // Center the login form
+       
           Center(
             child: Container(
-              width: 300, // Width of the login form
+              width: 300, 
               padding: const EdgeInsets.all(20),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -41,7 +41,6 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 20),
-                  // Email TextField
                   TextField(
                     controller: _emailController,
                     decoration: const InputDecoration(
@@ -50,7 +49,6 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 10),
-                  // Password TextField
                   TextField(
                     controller: _passwordController,
                     obscureText: true,
@@ -60,13 +58,12 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 20),
-                  // Log In Button
                   ElevatedButton(
                     onPressed: () {
-                      // Hardcoded login logic
+                   
                       if (_emailController.text == _correctEmail &&
                           _passwordController.text == _correctPassword) {
-                        // Login successful, navigate to HomePage
+                   
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
@@ -74,7 +71,7 @@ class LoginScreen extends StatelessWidget {
                           ),
                         );
                       } else {
-                        // Show alert if login fails
+             
                         showDialog(
                           context: context,
                           builder: (context) {
@@ -97,7 +94,7 @@ class LoginScreen extends StatelessWidget {
                     child: const Text("Log In"),
                   ),
                   const SizedBox(height: 10),
-                  // Register Button to navigate to RegistrationScreen (optional)
+             
                   TextButton(
                     onPressed: () {
                        Navigator.push(

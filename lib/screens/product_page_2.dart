@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+
 
 import 'package:flutter/material.dart';
 import 'home_screen.dart';
@@ -93,7 +93,7 @@ class ProductPega extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               SingleChildScrollView(
-                // Add horizontal scrolling for smaller screens
+                
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
@@ -164,43 +164,7 @@ class ProductPega extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
-            label: 'Wishlist',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.chat),
-            label: 'Chat',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Settings',
-          ),
-        ],
-        currentIndex: 0,
-        selectedItemColor: const Color.fromARGB(255, 98, 95, 95),
-        onTap: (index) {
-          if (index == 0) {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                builder: (context) => HomeScreen(),
-              ),
-            );
-          }
-        },
-      ),
+
     );
   }
 
@@ -276,88 +240,22 @@ class WishlistScreen extends StatelessWidget {
   }
 }
 
-class ChatScreen extends StatelessWidget {
-  const ChatScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Text(
-            'Log in to chat with us.',
-            style: TextStyle(fontSize: 18),
-          ),
-          const SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: () {
-              // Navigate to login screen
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) =>  LoginScreen(),
-                ),
-              );
-            },
-            child: const Text('Log in'),
-            style: ElevatedButton.styleFrom(),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Text(
-            'Log in to check your profile.',
-            style: TextStyle(fontSize: 18),
-          ),
-          const SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: () {
-              // Navigate to login screen
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) =>  LoginScreen(),
-                ),
-              );
-            },
-            child: const Text('Log in'),
-            style: ElevatedButton.styleFrom(),
-          ),
-        ],
-      ),
-    );
-  }
-}
 
 
-// Function to simulate adding the product to the wishlist
   void _addToWishlist(BuildContext context, String productName, String productImagePath, String productPrice) {
-    // Get the current wishlist from a global list or state management
-    // For now, I will store the wishlist in a static list for demonstration
+   
 
-    List<Map<String, String>> wishlist = []; // Simulate an empty wishlist
 
-    // Add the product to the wishlist list
+    List<Map<String, String>> wishlist = []; 
+
+   
     wishlist.add({
       'name': productName,
       'image': productImagePath,
       'price': productPrice,
     });
 
-    // Show a confirmation dialog
+   
     showDialog(
       context: context,
       builder: (context) {
@@ -367,7 +265,7 @@ class ProfileScreen extends StatelessWidget {
           actions: [
             TextButton(
               onPressed: () {
-                Navigator.of(context).pop(); // Close the dialog
+                Navigator.of(context).pop(); 
               },
               child: const Text('OK'),
             ),

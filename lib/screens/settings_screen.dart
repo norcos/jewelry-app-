@@ -7,53 +7,53 @@ class SettingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:  const Text('Settings'), // AppBar title
+        title:  const Text('Settings'),
       ),
       body: ListView(
         children: [
 
-          // App Preferences
+          
           _buildSectionTitle('Preferences'),
           _buildListTile(
             title: 'Language',
             icon: Icons.language,
             onTap: () {
-              // Navigate to Language Settings
+           
             },
           ),
           _buildListTile(
             title: 'Notifications',
             icon: Icons.notifications,
             onTap: () {
-              // Navigate to Notification Settings
+
             },
           ),
 
-          // Support
+        
           _buildSectionTitle('Support'),
           _buildListTile(
             title: 'Help & Support',
             icon: Icons.help,
             onTap: () {
-              // Navigate to Help & Support
+       
             },
           ),
           _buildListTile(
             title: 'Contact Us',
             icon: Icons.email,
             onTap: () {
-              // Navigate to Contact Us
+          
             },
           ),
           const Divider(),
 
-          // About
+          
           _buildSectionTitle('About'),
           _buildListTile(
             title: 'About App',
             icon: Icons.info,
             onTap: () {
-              // Navigate to About App page
+           
             },
           ),
         ],
@@ -61,7 +61,7 @@ class SettingsScreen extends StatelessWidget {
     );
   }
 
-  // Helper method to build a section title
+
   Widget _buildSectionTitle(String title) {
     return Padding(
       padding: const EdgeInsets.all(16.0),
@@ -75,7 +75,7 @@ class SettingsScreen extends StatelessWidget {
     );
   }
 
-  // Helper method to build a ListTile for each setting item
+  
   Widget _buildListTile({
     required String title,
     required IconData icon,

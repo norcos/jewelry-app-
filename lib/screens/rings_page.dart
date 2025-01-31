@@ -1,8 +1,8 @@
-// ignore_for_file: empty_statements, dead_code
+
 
 import 'package:flutter/material.dart';
-import 'product_page.dart'; // Import Product Page
-import 'home_screen.dart'; // Import HomeScreen
+import 'product_page.dart'; 
+import 'home_screen.dart';
 import 'login_screen.dart';
 
 class RingsPage extends StatelessWidget {
@@ -15,17 +15,17 @@ class RingsPage extends StatelessWidget {
         title: const Text("Rings Collection"),
       ),
       body: GridView.builder(
-        // Set the number of columns to 2
+       
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          crossAxisSpacing: 10, // Horizontal space between items
-          mainAxisSpacing: 10, // Vertical space between items
-          childAspectRatio: 0.75, // Adjust the aspect ratio of each item
+          crossAxisSpacing: 10, 
+          mainAxisSpacing: 10, 
+          childAspectRatio: 0.75, 
         ),
         padding: const EdgeInsets.all(10),
-        itemCount: 6, // Total number of items (3 rows * 2 columns)
+        itemCount: 6, 
         itemBuilder: (BuildContext context, int index) {
-          // You can add more products here
+          
           List<Map<String, String>> rings = [
             {
               'name': 'Gold Ring',
@@ -61,7 +61,7 @@ class RingsPage extends StatelessWidget {
 
           return GestureDetector(
             onTap: () {
-              // Navigate to the ProductPage with the product details
+         
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -109,9 +109,9 @@ class RingsPage extends StatelessWidget {
         currentIndex: 0, // Set the current index
         selectedItemColor: const Color.fromARGB(255, 98, 95, 95),
         onTap: (index) {
-          // Handle navigation
+   
           if (index == 0) {
-            // Navigate to HomeScreen when the home icon is clicked
+           
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(builder: (context) => HomeScreen()),
@@ -122,7 +122,7 @@ class RingsPage extends StatelessWidget {
     );
   }
 
-  // Helper method to build ring product card
+
   Widget _buildRingCard(
       String name, String description, String imagePath, String price) {
     return Card(
@@ -130,7 +130,7 @@ class RingsPage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Product image
+    
           Expanded(
             child: Image.asset(
               imagePath,
@@ -175,7 +175,7 @@ class WishlistScreen extends StatelessWidget {
                 const SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: () {
-                    // Navigate to login screen
+                
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -211,7 +211,7 @@ class ChatScreen extends StatelessWidget {
                 const SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: () {
-                    // Navigate to login screen
+              
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -248,7 +248,7 @@ class ProfileScreen extends StatelessWidget {
                 const SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: () {
-                    // Navigate to login screen
+               
                     Navigator.push(
                       context,
                       MaterialPageRoute(

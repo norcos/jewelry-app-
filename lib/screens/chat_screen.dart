@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_final_fields
-
 import 'package:flutter/material.dart';
 
 class ChatScreen extends StatefulWidget {
@@ -14,14 +12,14 @@ class _ChatScreenState extends State<ChatScreen> {
   List<String> _messages = [
     "Hello, how can I help you today?",
     "I am looking for a gold ring.",
-  ]; // Predefined messages for the demo
+  ];
 
-  // Method to send a new message
+  
   void _sendMessage() {
     if (_controller.text.isNotEmpty) {
       setState(() {
-        _messages.add(_controller.text); // Add the new message to the list
-        _controller.clear(); // Clear the input field
+        _messages.add(_controller.text); 
+        _controller.clear(); 
       });
     }
   }
@@ -34,7 +32,6 @@ class _ChatScreenState extends State<ChatScreen> {
       ),
       body: Column(
         children: [
-          // Chat messages list
           Expanded(
             child: ListView.builder(
               itemCount: _messages.length,
@@ -50,7 +47,7 @@ class _ChatScreenState extends State<ChatScreen> {
               },
             ),
           ),
-          // Input box and send button
+       
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
@@ -66,7 +63,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 ),
                 IconButton(
                   icon: const Icon(Icons.send),
-                  onPressed: _sendMessage, // Send the message when clicked
+                  onPressed: _sendMessage, 
                 ),
               ],
             ),

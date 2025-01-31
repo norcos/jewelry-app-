@@ -2,13 +2,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:my_app_jewel_lanka/screens/product_page_2.dart';
-import 'login_screen.dart'; 
-import 'product_page.dart'; 
-import 'settings_screen.dart'; 
-import 'rings_page.dart'; 
-import 'wishlist_screen.dart' as wishlist; 
-import 'chat_screen.dart' as chat; 
-
+import 'login_screen.dart';
+import 'product_page.dart';
+import 'settings_screen.dart';
+import 'rings_page.dart';
+import 'wishlist_screen.dart' as wishlist;
+import 'chat_screen.dart' as chat;
+import 'profile_screen.dart' as chat;
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -370,8 +370,8 @@ class HomePage extends StatelessWidget {
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               crossAxisCount:
-                  isPortrait ? 2 : 3, // Adjust columns based on orientation
-              childAspectRatio: isPortrait ? 0.8 : 1.2, // Adjust aspect ratio
+                  isPortrait ? 2 : 3, 
+              childAspectRatio: isPortrait ? 0.8 : 1.2, 
               children: [
                 GestureDetector(
                   onTap: () {
@@ -484,40 +484,6 @@ class HomePage extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
-  }
-}
-
-
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Text(
-            'Log in to check your profile.',
-            style: TextStyle(fontSize: 18),
-          ),
-          const SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: () {
-              // Navigate to login screen
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => LoginScreen(),
-                ),
-              );
-            },
-            child: const Text('Log in'),
-            style: ElevatedButton.styleFrom(),
-          ),
-        ],
       ),
     );
   }

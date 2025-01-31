@@ -1,7 +1,7 @@
-// ignore_for_file: prefer_const_constructors, library_private_types_in_public_api
+
 
 import 'package:flutter/material.dart';
-import 'registration_screen.dart'; // Im
+import 'registration_screen.dart'; 
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -14,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    // Navigate to the home screen after 5 seconds
+   
     Future.delayed(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
@@ -26,12 +26,12 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white, // Set background color
+      backgroundColor: Colors.white, 
       body: Center(
         child: Image.asset(
-          'assets/images/logo.png', // Path to your logo image
-          width: 414, // Adjust width as needed
-          height: 896, // Adjust height as needed
+          'assets/images/logo.png', 
+          width: 414, 
+          height: 896, 
         ),
       ),
     );
