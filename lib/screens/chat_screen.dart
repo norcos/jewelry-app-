@@ -9,7 +9,7 @@ class ChatScreen extends StatefulWidget {
 
 class _ChatScreenState extends State<ChatScreen> {
   final TextEditingController _controller = TextEditingController();
-  List<String> _messages = [
+  final List<String> _messages = [
     "Hello, how can I help you today?",
     "I am looking for a gold ring.",
   ];

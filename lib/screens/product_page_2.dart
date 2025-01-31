@@ -180,7 +180,7 @@ class ProductPega extends StatelessWidget {
       ),
       child: Text(
         text,
-        style: TextStyle(
+        style: const TextStyle(
           color: Colors.black,
           fontSize: 16,
           fontWeight: FontWeight.bold,
@@ -199,7 +199,7 @@ class ProductPega extends StatelessWidget {
       ),
       child: Text(
         text,
-        style: TextStyle(
+        style: const TextStyle(
           color: Colors.black,
           fontSize: 16,
           fontWeight: FontWeight.bold,
@@ -233,8 +233,8 @@ class WishlistScreen extends StatelessWidget {
                 ),
               );
             },
-            child: const Text('Log in'),
             style: ElevatedButton.styleFrom(),
+            child: const Text('Log in'),
           ),
         ],
       ),

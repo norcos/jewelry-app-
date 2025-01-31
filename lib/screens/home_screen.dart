@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, dead_code, unused_local_variable
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, dead_code, unused_local_variable, unused_import
 
 import 'package:flutter/material.dart';
 import 'package:my_app_jewel_lanka/screens/product_page_2.dart';
@@ -8,7 +8,7 @@ import 'settings_screen.dart';
 import 'rings_page.dart';
 import 'wishlist_screen.dart' as wishlist;
 import 'chat_screen.dart' as chat;
-import 'profile_screen.dart' as chat;
+import 'profile_screen.dart' as profile;
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -23,9 +23,9 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<Widget> _screens = [
     const HomePage(),
     const wishlist
-        .WishlistScreen(), // Use WishlistScreen from wishlist_screen.dart
+        .WishlistScreen(), 
     const chat.ChatScreen(),
-    const ProfileScreen(),
+    const profile.ProfileScreen(),
     const SettingsScreen(),
   ];
 
@@ -369,9 +369,8 @@ class HomePage extends StatelessWidget {
             GridView.count(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              crossAxisCount:
-                  isPortrait ? 2 : 3, 
-              childAspectRatio: isPortrait ? 0.8 : 1.2, 
+              crossAxisCount: isPortrait ? 2 : 3,
+              childAspectRatio: isPortrait ? 0.8 : 1.2,
               children: [
                 GestureDetector(
                   onTap: () {

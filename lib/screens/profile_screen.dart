@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'login_screen.dart'; // Import login screen
 
-class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
+class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Profile"),
+        title: const Text('Profile'),
         backgroundColor: Colors.blue,
       ),
       body: Center(
@@ -20,12 +21,15 @@ class ProfilePage extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                // Handle Edit Profile action (not implemented here)
+              },
               child: const Text("Edit Profile"),
             ),
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
+                // Navigate back to HomeScreen or log out
                 Navigator.pop(context);
               },
               child: const Text("Logout"),

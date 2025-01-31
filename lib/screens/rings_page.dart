@@ -114,7 +114,7 @@ class RingsPage extends StatelessWidget {
            
             Navigator.pushReplacement(
               context,
-              MaterialPageRoute(builder: (context) => HomeScreen()),
+              MaterialPageRoute(builder: (context) => const HomeScreen()),
             );
           }
         },
@@ -183,10 +183,10 @@ class WishlistScreen extends StatelessWidget {
                       ),
                     );
                   },
-                  child: const Text('Log in'),
                   style: ElevatedButton.styleFrom(
                   
                   ),
+                  child: const Text('Log in'),
                 ),
               ],
             ),
@@ -219,10 +219,10 @@ class ChatScreen extends StatelessWidget {
                       ),
                     );
                   },
-                  child: const Text('Log in'),
                   style: ElevatedButton.styleFrom(
                   
                   ),
+                  child: const Text('Log in'),
                 ),
               ],
             ),
@@ -256,10 +256,10 @@ class ProfileScreen extends StatelessWidget {
                       ),
                     );
                   },
-                  child: const Text('Log in'),
                   style: ElevatedButton.styleFrom(
                   
                   ),
+                  child: const Text('Log in'),
                 ),
               ],
             ),
