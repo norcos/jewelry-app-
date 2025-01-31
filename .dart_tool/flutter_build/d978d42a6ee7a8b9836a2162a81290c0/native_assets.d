@@ -1,0 +1,1 @@
+ C:\\Users\\USER\\Desktop\\My\ App\ Jewel\ Lanka\\my_app_jewel_lanka\\.dart_tool\\flutter_build\\d978d42a6ee7a8b9836a2162a81290c0\\native_assets.yaml: 
